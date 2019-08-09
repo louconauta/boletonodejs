@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title #{title} - My Site
+    include includes.jade
+
+  body
+    //header
+      //h1 My Site
+
+    .container.ataimpressao
+      include boleto.jade
+      include boleto.jade
+
+      .col-xs-12
+        canvas#barcode
+
+    script.
+      JsBarcode("#barcode", #{barcode}, {
+        format: "CODE128",
+        background: "transparent"
+      });
+      //window.print();
+
+  //footer
+  //    p Running on node with Express, Jade and Stylus

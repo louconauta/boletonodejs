@@ -1,0 +1,30 @@
+{
+  "name": "boletonodejs",
+  "version": "1.0.0",
+  "description": "Projeto para Geração de Boleto, Remessa e Retorno de bancos variados usando homologação de layout próprio",
+  "main": "index.js",
+  "dependencies": {
+    "canvas": "^2.5.0",
+    "cors": "^2.8.5",
+    "express": "^3.21.2",
+    "jade": "^1.11.0",
+    "jsbarcode": "^3.11.0",
+    "nib": "^1.1.2",
+    "qs": "^6.7.0",
+    "stylus": "^0.54.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/louconauta/boletonodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/louconauta/boletonodejs/issues"
+  },
+  "homepage": "https://github.com/louconauta/boletonodejs#readme"
+}
