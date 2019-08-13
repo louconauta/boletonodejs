@@ -1,102 +1,133 @@
-.row
-    .col
-        img(src="logos/sicredi.png",style="width:150px; padding:2px;")
-    .col(style="padding-top:12px; font-size:16px; font-weight:bold;")
-        p 748-X
-    .col(style="text-align:right;")
-        p RECIBO DO PAGADOR
+table(style='width:100%;', cellspacing='0', cellpadding='0')
+    tr
+        td(colspan='2')
+            img(src="logos/#{title.logotipo}",style="width:150px; padding:10px;")
+        td(style='font-size:18px; font-weight:bold; text-align:center; padding-top:15px;')
+            p #{data.banco}-#{data.bancodigito}
+        td(colspan='3', style='font-size:18px; font-weight:bold; text-align:right; padding-top:15px; padding-right:10px;')
+            if via == 1
+                p #{title.textosuperior}
+            if via == 2
+                p #{data.codigobarras}
+    tr
+        td(colspan='5')
+            | #{title.localpagamento}
+            br
+            | #{data.localpagamento}
+        td(style='width:300px; background-color:#ededed;')
+            | #{title.vencimento}
+            br
+            | #{data.vencimento}
 
-.row
-    .col
-        p Local do Pagamento
-        p PAGÁVEL PREFERENCIALMENTE NAS COOPERATIVAS DE CRÉDITO DO SICREDI
-    .col
-        p Vencimento
-        p 15/09/2019  
+    tr
+        td(colspan='5')
+            | #{title.beneficiario}
+            br
+            | #{data.beneficiario}
 
-.row
-    .col
-        p Beneficiário
-        p NOME DO BENEFICIÁRIO
+        td
+            | #{title.agenciacodigobeneficiario}
+            br
+            | #{data.agenciacodigobeneficiario}
 
-    .col
-        p Agência/Código Beneficiário
-        p 3954.02.00092
+    tr
+        td
+            | #{title.datadocumento}
+            br
+            | #{data.datadocumento}
+        td
+            | #{title.numerodocumento}
+            br
+            | #{data.numerodocumento}
+        td
+            | #{title.especiedocumento}
+            br
+            | #{data.especiedocumento}
+        td
+            | #{title.aceite}
+            br
+            | #{data.aceite}
+        td
+            | #{title.dataprocessamento}
+            br
+            | #{data.dataprocessamento}
+        td(style='background-color:#ededed;')
+            | #{title.nossonumero}
+            br
+            | #{data.nossonumero}
 
-.row
-    .col
-        p Data do Documento
-        p 06/05/2014
-    .col
-        p Número do Documento
-        p 123456/1
-    .col
-        p Espécie do Documento
-        p DM
-    .col
-        p Aceite
-        p NÃO
-    .col
-        p Data de Processamento
-        p 06/05/2014
-    .col
-        p Nosso Número
-        p 14/200001-0
+    tr
+        td
+            | #{title.usobanco}
+            br
+            | #{data.usobanco}
+        td
+            | #{title.carteira}
+            br
+            | #{data.carteira}
+        td
+            | #{title.especie}
+            br
+            | #{data.especie}
+        td
+            | #{title.quantidade}
+            br
+            | #{data.quantidade}
+        td
+            | #{title.valor}
+            br
+            | #{data.valor}
+        td
+            | #{title.valordocumento}
+            br
+            | #{data.valordocumento}
 
-.row
-    .col
-        p Uso do Banco
-        p Teste
-    .col
-        p Carteira
-        p 1
-    .col
-        p Espécie
-        p REAL
-    .col
-        p Quantidade
-        p Teste
-    .col
-        p Valor
-        p Teste
-    .col
-        p (=) Valor do Documento
-        p 100,00
+    tr
+        td(rowspan='6', colspan='5', style="vertical-align:top;")
+            | #{title.instrucoes}
 
-.row
-    .col
-        p testefplds´fpdlsf´dpslf´splfd´splf
-    .col
-        .row
-            .col
-                p (-) Desconto/Abatimento
-                p Teste
-        .row
-            .col
-                p (-) Outras deduções
-                p Teste
-        .row
-            .col
-                p (+) Juros / Multa
-                p Teste
-        .row
-            .col
-                p (+) Outros acréscimos
-                p Teste
-        .row
-            .col
-                p (=) Valor Cobrado
-                p Teste
-.row
-    .col
-        p Pagador:
-        p NOME DO PAGADOR - 000.000.000-01
-        P RUA FICTÍCIA
-        p PORTO ALEGRE RS 90000-000
-.row
-    .col
-        p Sacador / Avalista:
-        p Teste
-    .col
-        p Código de Baixa:
-        p Teste
+    tr
+        td
+            | #{title.descontoabatimento}
+            br
+            | #{data.descontoabatimento}
+
+    tr
+        td
+            | #{title.outrasdeducoes}
+            br
+            | #{data.outrasdeducoes}
+
+    tr
+        td
+            | #{title.jurosmulta}
+            br
+            | #{data.jurosmulta}
+
+    tr
+        td
+            | #{title.outrosacrescimos}
+            br
+            | #{data.outrosacrescimos}
+    tr
+        td(style='background-color:#ededed;')
+            | #{title.valorcobrado}
+            br
+            | #{data.valorcobrado}
+
+    tr
+        td(colspan='6', style='white-space:pre;')
+            | #{title.pagador}
+            br
+            | #{data.pagador}
+                
+
+    tr
+        td(colspan='5',style='border-right-width:0px;')
+            | #{title.sacadoravalista}
+            br
+            | #{data.sacadoravalista}
+        td(colspan='1',style='border-left-width:0px;')
+            | #{title.codigobaixa}
+            br
+            | #{data.codigobaixa}

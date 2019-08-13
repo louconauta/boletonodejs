@@ -8,18 +8,33 @@ html
     //header
       //h1 My Site
 
-    .container.ataimpressao
-      include boleto.jade
-      include boleto.jade
+    - var via = 0
 
-      .col-xs-12
-        canvas#barcode
+    .container.impressao.default-boleto
+      - via = 1
+      include boleto.jade
+      - via = 2
+      include boleto.jade
+      
+      table(style='width:100%')
+        tr
+          td(style='text-align:right;')
+            | Autenticação Mecânica - <b>FICHA DE COMPENSAÇÃO</b>
+            div#barcode(style='width:600px; padding:5px;')
 
     script.
-      JsBarcode("#barcode", #{barcode}, {
-        format: "CODE128",
-        background: "transparent"
-      });
+      new Boleto('#{data.linhadigitavel}').toSVG('#barcode');
+      //var svg = new Boleto(number).toSVG();
+      //console.log(svg); // Veja o código HTML no console
+
+    //script.
+    //  JsBarcode("#barcode", #{barcode}, {
+    //    format: "EAN13",
+    //    background: "transparent",
+    //    width:2.5,
+    //    height:50,
+    //    displayValue:false
+    //  });
       //window.print();
 
   //footer
