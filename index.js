@@ -1,8 +1,9 @@
 var express = require('express'), 
     stylus = require('stylus'), 
-    nib = require('nib')
+    nib = require('nib'),
+    app = express();
 
-var app = express()
+var Bancos = require('./controllers/bancos')
 
 function compile(str, path) {
   return stylus(str)
@@ -20,6 +21,7 @@ app.use(stylus.middleware(
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', function (req, res) {
+
     var titlejson = {
 		logotipo:'sicredi.png',
         textosuperior:'RECIBO DO PAGADOR',
@@ -53,16 +55,16 @@ app.get('/', function (req, res) {
     var dadosjson = {
         banco:'748',
         bancodigito:'X',
-        localpagamento:'PAGÁVEL PREFERENCIALMENTE NAS COOPERATIVAS DE CRÉDITO DO SICREDI',
+        localpagamento:'',
         vencimento:'15/09/2019',
         beneficiario:'NOME DO BENEFICIÁRIO',
-        agenciacodigobeneficiario:'3954.02.00092',
+        agenciacodigobeneficiario:'',
         datadocumento:'06/05/2014',
         numerodocumento:'123456/1',
         especiedocumento:'DM',
         aceite:'NÃO',
         dataprocessamento:'06/05/2014',
-        nossonumero:'14/200001-0',
+        seunumero:'1',
         usobanco:'Teste',
         carteira:'1',
         especie:'REAL',
@@ -78,8 +80,15 @@ app.get('/', function (req, res) {
         pagador:'NOME DO PAGADOR - 000.000.000-01\nRUA FICTÍCIA\nPORTO ALEGRE RS 90000-000',
         sacadoravalista:'Teste',
         codigobaixa:'Teste',
-        linhadigitavel:'74891.11422 00001.039544 02000.921078 9 61870000010000'
+        cedente:'00092',
+        agencia:'3954',
+        postobeneficiario:'02',
+        nossonumero:'',
+        linhadigitavel:''
     }
+
+    var bancos = new Bancos(dadosjson);
+    //console.log(bancos.getBanco());
 
     res.render('index',
     { 

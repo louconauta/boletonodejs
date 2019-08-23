@@ -3,6 +3,7 @@
     text-shadow:none !important;
     filter:none !important;
     -ms-filter:none !important;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .default-boleto td {
@@ -11,7 +12,7 @@
     border-style:solid;
     border-width:1px;
     border-color:#000;
-    line-height:14px;
+    line-height:15px;
     padding:2px;
 }
 
